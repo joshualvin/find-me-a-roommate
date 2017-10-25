@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <!-- Imports -->
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+            
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <style>
+        /* Fade Effect */
+        @keyframes paddingTopLogin{
+            0% {padding-top: 0%}
+            100% {padding-top: 33%}
+        }
+        
+        @-webkit-keyframes paddingTopLogin {
+            0% {padding-top: 0%}
+            100% {padding-top: 33%}
+        }
+
+        @-webkit-keyframes fadeIn {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @-moz-keyframes fadeIn {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @-o-keyframes fadeIn {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadeIn {
+            0%   { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* CSS Classes */
+        .center-logo{
+            display: block;
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            padding-top: 33%
+        }
+        .center-signup-button{
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            padding-top: 53%;
+        }
+        .login-field{
+            padding-top: 33%;
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            display: none;
+        }
+        .signup-field{
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            padding-top: 10%;
+            display: none;
+        }
+    </style>
+
+    <body>
+
+        <!-- App Logo - Our App Logo since we haven't decided it yet  -->
+        
+        <div class="row center-align center-logo" id="app-logo">
+            <img src="images/app_logo_undefined.png" alt="" class="responsive-img">
+            <h5>App Name</h5>
+        </div>
+
+        <!-- Login Toggle Button - This buttons just makes the login part appear on screen  -->
+
+        <div id="toggle-login-button" class="row center-align">
+                <a onclick="toggleLogin()" class="btn waves-effect waves-light green">login</a>
+        </div>
+
+        <!-- Login Field - The actual fields for the login part  -->
+
+        <div class="container login-field" id="login-field">
+            <div class="row">
+                <div class="col s1"></div>
+                <div class="center-align input-field col s10">
+                    <input placeholder="email" id="email" type="text" class="validate">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col s1"></div>
+            </div>
+            <div class="row">
+                    <div class="col s1"></div>
+                    <div  class="center-align input-field col s10">
+                        <input placeholder="password" id="password" type="text" class="validate">
+                        <label for="password">Password</label>
+                </div>
+                <div class="col s1"></div>
+            </div>
+            <div class="row center-align">
+                <a class="waves-effect waves-light btn">Login</a>
+            </div>
+        </div>
+        
+        <!-- SignUp Fields -->
+
+        <div class="container signup-field" id="signup-field">
+            <div class="row">
+                <div class="col s1"></div>
+                <div class="center-align input-field inline col s10">
+                    <input id="first-name" type="text" class="validate">
+                    <label for="first-name">First Name</label>
+                </div>
+                <div class="col s1"></div>
+            </div>
+            <div class="row">
+                    <div class="col s1"></div>
+                    <div class="center-align input-field inline col s10">
+                        <input id="last-name" type="text" class="validate">
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="col s1"></div>
+            </div>
+            <div class="row">
+                <div class="col s1"></div>
+                <div class="center-align input-field inline col s10">
+                    <input id="email" type="text" class="validate">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col s1"></div>
+            </div>
+            <div class="row">
+                    <div class="col s1"></div>
+                    <div  class="center-align input-field inline col s10">
+                        <input id="password" type="text" class="validate">
+                        <label for="pasword">Password</label>
+                </div>
+                <div class="col s1"></div>
+            </div>
+            <div class="row">
+                <div class="col s1"></div>
+                <div  class="center-align input-field inline col s10">
+                    <input id="age" type="text" class="validate">
+                    <label for="age">Age</label>
+                </div>
+            </div>
+            <div class="row center-align">
+                <div class="col s1"></div>
+                <div class="col s5">
+                    <input name="gender" type="radio" id="test1" />
+                    <label for="male">Male</label>
+                </div>
+                <div class="col s5">
+                    <input name="gender" type="radio" id="test2" />
+                    <label for="female">Female</label>
+                </div>
+                <div class="col s1"></div>
+            </div>
+            <div class="row">
+                <div class="col s1"></div>
+                <div  class="center-align input-field inline col s10">
+                    <input id="nationality" type="text" class="validate">
+                    <label for="nationality">Nationality</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s1"></div>
+                <div  class="center-align input-field inline col s10">
+                    <input id="major" type="text" class="validate">
+                    <label for="major">Major</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row center-align center-signup-button" id="signup-button-menu">
+            <a onclick="toggleSignup()" href="#">Sign up</a>
+        </div>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+
+    <script>
+        var toggleOnOffSignup = true;
+
+        var appLogo = document.getElementById("app-logo");
+        
+        var loginButton = document.getElementById("login-button");
+        var loginField = document.getElementById("login-field");
+
+        var appSignup = document.getElementById("signup-field");
+
+        var toggleLoginButton = document.getElementById("toggle-login-button");
+        var signUpButton = document.getElementById("signup-button-menu");
+        
+        function hideLogin(){
+            if(loginField.style.display !== "none"){
+                loginField.style.display = "none";
+            }
+        }
+
+        function showLogin(){
+            if (loginField.style.display !== "block"){
+                loginField.style.display = "block";
+            }
+        } 
+
+        function hideSignUp(){
+            if (appSignup.style.display !== "none") {
+                appSignup.style.display = "none";
+            }
+        }
+
+        function showSignUp(){
+            if (appSignup.style.display !== "block"){
+                appSignup.style.display = "block"; 
+            }
+        }
+
+        function hideLogo(){
+            if (appLogo.style.display !== "none") {
+                appLogo.style.display = "none";
+            }
+        }
+
+        function hideToggleLoginButton(){
+            toggleLoginButton.style.display = "none";
+        }
+        
+        function toggleLogin(){
+                hideLogo();
+                showLogin();
+                hideToggleLoginButton();
+        }
+
+        function toggleSignup(){
+            toggleLogin();
+            if(toggleOnOffSignup){
+                hideLogin();
+                showSignUp();
+                toggleOnOffSignup = false;
+                signUpButton.style.paddingTop = "5%";
+            } else{
+                hideSignUp();
+                showLogin();
+                signUpButton.style.paddingTop = "53%";
+                toggleOnOffSignup = true;
+            }
+        }
+
+    </script>
+</html>
